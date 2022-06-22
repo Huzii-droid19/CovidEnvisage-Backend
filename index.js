@@ -25,9 +25,8 @@ app.use((req, res, next) => {
 app.use("/", express.static("public"));
 app.use("/user/", require("./routes/user.routes"));
 app.use("/vitals/", require("./routes/vitals.routes"));
-app.use("/hrct/", require("./routes/hrct.routes"));
-app.use("/cxr/", require("./routes/cxr.routes"));
 app.use("/testing/", require("./routes/testing.routes"));
 app.use("/vaccination/", require("./routes/vaccination.routes"));
+app.use("/records/", require("./routes/testing-result.routes"));
 
 app.listen(PORT, () => console.log(`Listening to PORT ${PORT}`));

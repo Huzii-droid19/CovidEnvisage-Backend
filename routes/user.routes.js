@@ -120,40 +120,4 @@ router.get("/:id", async (req, res) => {
     });
   }
 });
-
-//covid_vitals
-
-router.get("/get_vitals/:user_id", async (req, res) => {
-  try {
-    const user_id = req.params.user_id;
-    await models.CovidVitals.findAll({
-      where: {
-        user_id: user_id,
-      },
-    }).then((a) => {
-      if (a.length > 0) {
-        return res.status(200).json({
-          message: "Vitals identified",
-          vitals: a,
-        });
-      } else {
-        return res.status(404).json({
-          message: "NOT FOUND",
-          vitals: [],
-        });
-      }
-    });
-  } catch (error) {
-    return res.status(500).json({
-      message: "ERROR!!!!!!!",
-      error: error.message,
-    });
-  }
-});
-
-router.post("/cxr/", async (req, res) => {
-  try {
-    const { inputSamples, result, outputSample, accuracy, user_id } = req.body;
-  } catch (error) {}
-});
 module.exports = router;

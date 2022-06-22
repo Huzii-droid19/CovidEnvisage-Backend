@@ -8,27 +8,27 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER,
       },
-      cough: {
+      temperature: {
+        type: Sequelize.STRING,
         allowNull: false,
-        type: Sequelize.BOOLEAN,
       },
-      fever: {
-        allowNull: false,
+      heart_rate: {
         type: Sequelize.DECIMAL,
-      },
-      oxygen_level: {
         allowNull: false,
-        type: Sequelize.ENUM("High", "Low", "Normal"),
+      },
+      respiratory_rate: {
+        type: Sequelize.DECIMAL,
+        allowNull: false,
+      },
+      spo2: {
+        type: Sequelize.DECIMAL,
+        allowNull: false,
       },
       bp_sys: {
         allowNull: false,
         type: Sequelize.INTEGER,
       },
       bp_dia: {
-        allowNull: false,
-        type: Sequelize.INTEGER,
-      },
-      pulse_rate: {
         allowNull: false,
         type: Sequelize.INTEGER,
       },

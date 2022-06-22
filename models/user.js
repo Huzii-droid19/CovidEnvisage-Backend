@@ -9,16 +9,10 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
-      User.hasMany(models.HRCT, {
-        foreignKey: "user_id",
-        as: "hrct_sample",
-        hooks: true,
-        onDelete: "CASCADE",
-      });
 
-      User.hasMany(models.CXR, {
+      User.hasMany(models.TestingResult, {
         foreignKey: "user_id",
-        as: "cxr_samples",
+        as: "test_samples",
         hooks: true,
         onDelete: "CASCADE",
       });
